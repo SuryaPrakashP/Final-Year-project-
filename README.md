@@ -28,14 +28,3 @@ A loan management application built with Django, SQLite3, JavaScript, HTML, CSS,
 3. Customers can make monthly loan payments through the application.
 4. Both customers and admins have dashboards for efficient management.
 
-## Contributing
-
-Contributions are welcome! Please open pull requests or issues.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-Simplify loan management with our application. Register, request, and pay loans effortlessly. Admins, track requests and manage approvals seamlessly.

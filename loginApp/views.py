@@ -79,12 +79,9 @@ def edit_customer(request):
     customer = CustomerSignUp.objects.get(user=request.user)
     form = UpdateCustomerForm(instance=customer)
     if request.method == 'POST':
-
-        form = UpdateCustomerForm(
-            request.POST, request.FILES, instance=customer)
-        if form.is_valid:
+        form = UpdateCustomerForm(request.POST, request.FILES, instance=customer)
+        if form.is_valid():  # Corrected
             customer = form.save(commit=False)
             customer.save()
             return HttpResponseRedirect(reverse('home'))
-    # return HttpResponseRedirect(reverse('home'))
     return render(request, 'loginApp/edit.html', context={'form': form})

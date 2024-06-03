@@ -13,18 +13,58 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <!-- MDB -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.css" rel="stylesheet" />
-    <!-- MDB -->
+    <!-- Custom CSS -->
+    <style>
+        /* Navbar */
+        .navbar {
+            background-color: #343a40; /* Dark background color */
+        }
 
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: #ffffff !important; /* Bright white text color */
+            font-weight: bold;
+            font-family: 'Roboto', sans-serif; /* Use Roboto font */
+        }
 
+        .navbar-brand:hover,
+        .navbar-nav .nav-link:hover {
+            color: #ffffff !important; /* Bright white text color on hover */
+        }
+
+        .navbar-toggler {
+            border-color: #ffffff !important; /* Bright white color for the toggle button */
+        }
+
+        .navbar-toggler-icon {
+            background-color: #ffffff !important; /* Bright white color for the toggle button icon */
+        }
+        
+        /* Additional text styles */
+        .navbar-brand {
+            font-size: 1.5rem; /* Larger font size for the brand */
+        }
+
+        .navbar-nav .nav-link {
+            font-size: 1.1rem; /* Medium font size for the links */
+        }
+
+        /* Make the page unscrollable */
+        body {
+            overflow: auto;
+        }
+    </style>
+    <!-- Custom CSS -->
     <title></title>
 </head>
 
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <!-- Container wrapper -->
         <div class="container-fluid">
+            <!-- Navbar brand -->
             <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
                 data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -34,13 +74,8 @@
 
             <!-- Collapsible wrapper -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Navbar brand -->
-                <a class="mt-2 navbar-brand mt-lg-0" href="/">
-                    <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="15" alt=""
-                        loading="lazy" />
-                </a>
                 <!-- Left links -->
-                <ul class="mb-2 navbar-nav me-auto mb-lg-0">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="/">HOME</a>
                     </li>
@@ -59,60 +94,40 @@
                         <a class="nav-link" href="/loan/user-transaction">Transactions</a>
                     </li>
                     {% endif %}
-
-
                 </ul>
-                <!-- Left links -->
 
-                <ul class="mb-2 navbar-nav ms-auto mb-lg-0">
+                <!-- Right links -->
+                <ul class="navbar-nav">
                     {% if user.is_authenticated %}
-
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'loanApp:loan_request'%}">Apply Loan</a>
                     </li>
-                    <li>
-                        <a class="nav-link" href="{% url 'login_App:edit-customer'%}">Edit Info</a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login_App:edit-customer'%}"></a>
                     </li>
-
-                    <li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/account/logout-customer">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item me-2">
-                        <b> <a class="nav-link" href="/account/login-customer">Login</a></b>
-
-
+                        <a class="nav-link" href="/account/login-customer">Login</a>
                     </li>
                     <li class="nav-item">
-                        <b> <a class="nav-link" href="/account/signup-customer">Signup</a></b>
+                        <a class="nav-link" href="/account/signup-customer">Signup</a>
                     </li>
                     <li class="nav-item">
-                        <b> <a class="nav-link" href="/manager/admin-login">Admin</a></b>
+                        <a class="nav-link" href="/manager/admin-login">Admin</a>
                     </li>
-
                     {% endif %}
-
                 </ul>
             </div>
             <!-- Collapsible wrapper -->
-
-
-
-            <!-- Right elements -->
-            <div class="d-flex align-items-center">
-
-
-
-
-
-
-
-            </div>
-            <!-- Right elements -->
         </div>
         <!-- Container wrapper -->
     </nav>
     <!-- Navbar -->
+
+    <!-- Bootstrap JS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.6.0/mdb.min.js"></script>
 
 </body>
